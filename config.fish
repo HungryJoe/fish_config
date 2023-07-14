@@ -11,12 +11,10 @@ if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
 end
 
 # Aliases
-source ~/.important/aliases/aliases_common
-source ~/.important/aliases/aliases_sensitive
-if test -e $HOME/.important/aliases/aliases_sensitive
-    source $HOME/.important/aliases/aliases_sensitive
+source ~/.config/fish/aliases.fish
+if test -e ~/.important/aliases/aliases_sensitive
+    source ~/.important/aliases/aliases_sensitive
 end
-source ~/.important/aliases/aliases_misc.fish
 
 # App-specific settings
 if test -d ~/.nix-profile/share/asdf-vm
