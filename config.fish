@@ -21,10 +21,10 @@ if test -d ~/.nix-profile/share/asdf-vm
     set -g ASDF_DIR ~/.nix-profile/share/asdf-vm
     source ~/.nix-profile/share/asdf-vm/asdf.fish
 end
-if which -s zoxide
+if which-test zoxide
     zoxide init fish | source
 end
-if which -s docker
+if which-test docker
     if test -d /Applications/Docker.app
         source /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion
         source /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion
@@ -37,6 +37,18 @@ set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; te
 if test -d /Users/skagan/.opam
     source /Users/skagan/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 end
-if which -s direnv
+if which-test direnv
     direnv hook fish | source
 end
+
+function which-test
+    # OS-agnostic which
+    if test -f /etc/os-release
+        # On Linux
+        which $argv[1] > /dev/null 2> /dev/null
+    else
+        # On MacOS
+        which -s $argv[1]
+    end
+end
+
