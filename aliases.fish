@@ -28,6 +28,11 @@ if which-test exa
     alias ls=exa
     alias ds='exa --tree --git-ignore --icons'
     alias dsl='exa --tree --git-ignore --icons --level'
+else if which-test eza
+    alias ls=eza
+    alias ds='eza --tree --git-ignore --icons'
+    alias dsl='eza --tree --git-ignore --icons --level'
+    
 end
 
 if which-test dust
