@@ -25,8 +25,10 @@ if which-test zoxide
     zoxide init fish | source
 end
 if which-test docker
-    if test -d /Applications/Docker.app
+    if test -e /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion
         source /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion
+    end
+    if test -e /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion
         source /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion
     end
 end
