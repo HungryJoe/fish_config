@@ -27,8 +27,8 @@ function select-files-to-edit --description "Select files to edit in Neovim usin
     ) || return $status
 
     set -l files "$files_and_query[2..-1]"
-    set -l query "$files_and_query[1]"
-    set -l vim_query (_transform_rg_pattern_to_vim $query)
-    set -l nvim_search -c "/$vim_query"
-    echo $files | xargs nvim $nvim_search
+    # set -l query "$files_and_query[1]"
+    # set -l vim_query (_transform_rg_pattern_to_vim $query)
+    # set -l nvim_search -c "/$vim_query"
+    echo $files | xargs hx
 end
