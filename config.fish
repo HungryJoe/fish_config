@@ -42,6 +42,11 @@ end
 if which-test direnv
     direnv hook fish | source
 end
+if which-test java
+    if test -d $HOME/.nix-profile/zulu-8.jdk
+        set -xg JAVA_HOME (path resolve $HOME/.nix-profile/zulu-8.jdk/..)
+    end
+end
 
 function which-test
     # OS-agnostic which
