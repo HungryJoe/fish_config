@@ -48,7 +48,7 @@ if which-test java
     end
 end
 if which-test bat
-    set -U BAT_THEME onelight
+    set -U BAT_THEME OneHalfLight
 end
 
 function which-test
