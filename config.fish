@@ -32,12 +32,13 @@ if which-test docker
         source /Applications/Docker.app/Contents/Resources/etc/docker.fish-completion
     end
 end
-if test -e ~/.config/fish/functions/fzf_configure_bindings.fish 
+if test -e ~/.config/fish/functions/fzf_configure_bindings.fish
     fzf_configure_bindings
 end
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; test -f /Users/skagan/.ghcup/env ; and set -gx PATH $HOME/.cabal/bin /Users/skagan/.ghcup/bin $PATH # ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
+test -f /Users/skagan/.ghcup/env; and set -gx PATH $HOME/.cabal/bin /Users/skagan/.ghcup/bin $PATH # ghcup-env
 if test -d /Users/skagan/.opam
-    source /Users/skagan/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+    source /Users/skagan/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 end
 if which-test direnv
     direnv hook fish | source
@@ -55,10 +56,9 @@ function which-test
     # OS-agnostic which
     if test -f /etc/os-release
         # On Linux
-        which $argv[1] > /dev/null 2> /dev/null
+        which $argv[1] >/dev/null 2>/dev/null
     else
         # On MacOS
         which -s $argv[1]
     end
 end
-
