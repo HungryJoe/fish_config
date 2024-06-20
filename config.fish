@@ -47,6 +47,9 @@ if which-test java
         set -xg JAVA_HOME (path resolve $HOME/.nix-profile/zulu-8.jdk/..)
     end
 end
+if which-test bat
+    set -U BAT_THEME onelight
+end
 
 function which-test
     # OS-agnostic which
