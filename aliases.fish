@@ -2,7 +2,7 @@ function which-test
     # OS-agnostic which
     if test -f /etc/os-release
         # On Linux
-        which $argv[1] > /dev/null 2> /dev/null
+        which $argv[1] >/dev/null 2>/dev/null
     else
         # On MacOS
         which -s $argv[1]
@@ -32,7 +32,7 @@ else if which-test eza
     alias ls=eza
     alias ds='eza --tree --git-ignore --icons'
     alias dsl='eza --tree --git-ignore --icons --level'
-    
+
 end
 
 if which-test dust
@@ -40,7 +40,7 @@ if which-test dust
 end
 
 if which-test bat
-    alias less='bat --paging=always'
+    alias less='bat --paging=always --theme=OneHalfLight'
 else
     # For .gitconfig's core.pager
     alias bat='less'
