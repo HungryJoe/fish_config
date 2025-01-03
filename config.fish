@@ -34,6 +34,9 @@ if which-test docker-compose
         source /Applications/Docker.app/Contents/Resources/etc/docker-compose.fish-completion
     end
 end
+if which-test pay-respects
+     pay-respects fish --alias | source
+end
 if test -e ~/.config/fish/functions/fzf_configure_bindings.fish
     fzf_configure_bindings
 end
