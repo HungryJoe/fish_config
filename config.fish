@@ -56,6 +56,10 @@ end
 if which-test bat
     set -U BAT_THEME OneHalfLight
 end
+if which-test atuin
+    atuin init fish | source
+    atuin gen-completions --shell fish | source
+end
 
 function which-test
     # OS-agnostic which
