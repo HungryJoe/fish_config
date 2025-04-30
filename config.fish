@@ -21,6 +21,11 @@ if test -d ~/.nix-profile/share/asdf-vm
     set -g ASDF_DIR ~/.nix-profile/share/asdf-vm
     source ~/.nix-profile/share/asdf-vm/asdf.fish
 end
+
+if which-test hx
+    set -gx EDITOR (which hx)
+end
+
 if which-test zoxide
     zoxide init fish | source
 end
