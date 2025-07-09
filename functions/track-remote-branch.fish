@@ -14,7 +14,7 @@ function track-remote-branch --description "Create a git branch that tracks a se
     end
 
     set -l remote_branch (_select-other-branches $query_flag --remote) # Should always be a valid Git branch name
-    set -l local_branch (echo $remote_branch | sd '^.+/' '') # remote_branch is valid ==> local_branch is valid
+    set -l local_branch (echo $remote_branch | sd '^.+?/' '') # remote_branch is valid ==> local_branch is valid
 
     if test -n $local_branch
         echo
