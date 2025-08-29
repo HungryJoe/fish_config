@@ -6,7 +6,7 @@ function _tide_item_git
         return
     else if git tag --points-at HEAD | string replace -r ".+(.{$tide_git_truncation_length})" '…$1' | read location
         git rev-parse --git-dir --is-inside-git-dir | read -fL gdir in_gdir
-        set location $_tide_location_color'#'$location
+        set location $_tide_location_color''$location
     else
         git rev-parse --git-dir --is-inside-git-dir --short HEAD | read -fL gdir in_gdir location
         set location $_tide_location_color''$location
@@ -58,10 +58,10 @@ function _tide_item_git
 
     _tide_print_item git $_tide_location_color$tide_git_icon' ' (set_color white; echo -ns $location
         set_color $tide_git_color_operation; echo -ns ' '$operation ' '$step/$total_steps
-        set_color $tide_git_color_upstream; echo -ns ' '$behind ' '$ahead
-        set_color $tide_git_color_stash; echo -ns ' 󰚇'$stash
-        set_color $tide_git_color_conflicted; echo -ns ' 󰜥'$conflicted
-        set_color $tide_git_color_staged; echo -ns ' '$staged
-        set_color $tide_git_color_dirty; echo -ns ' '$dirty
-        set_color $tide_git_color_untracked; echo -ns ' '$untracked)
+        set_color $tide_git_color_upstream; echo -ns ' '$behind ' '$ahead
+        set_color $tide_git_color_stash; echo -ns ' '$stash
+        set_color $tide_git_color_conflicted; echo -ns ' '$conflicted
+        set_color $tide_git_color_staged; echo -ns ' '$staged
+        set_color $tide_git_color_dirty; echo -ns ' '$dirty
+        set_color $tide_git_color_untracked; echo -ns ' '$untracked)
 end
