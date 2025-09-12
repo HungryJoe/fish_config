@@ -66,6 +66,11 @@ if which-test atuin
     atuin gen-completions --shell fish | source
 end
 
+# LS Colors
+if which-test vivid
+    set -gx LS_COLORS (vivid generate catppuccin-latte)
+end
+
 function which-test
     # OS-agnostic which
     if test -f /etc/os-release
