@@ -65,6 +65,9 @@ if which-test atuin
     atuin init fish | source
     atuin gen-completions --shell fish | source
 end
+if which-test erd
+    erd --completions fish | source
+end
 
 # LS Colors
 if which-test vivid
