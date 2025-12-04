@@ -74,6 +74,10 @@ if which-test vivid
     set -gx LS_COLORS (vivid generate catppuccin-latte)
 end
 
+if which-test oh-my-posh
+    oh-my-posh init fish --config quick-term | source
+end
+
 function which-test
     # OS-agnostic which
     if test -f /etc/os-release
