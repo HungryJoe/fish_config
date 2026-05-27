@@ -1,5 +1,6 @@
 version = 3
 final_space = true
+async = true
 
 [upgrade]
   source = 'cdn'
