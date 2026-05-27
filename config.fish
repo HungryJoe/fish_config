@@ -75,7 +75,7 @@ if which-test vivid
 end
 
 if which-test oh-my-posh
-    oh-my-posh init fish --config ~/Code/dotfiles/fish_config/quickterm.toml | source
+    oh-my-posh init fish --config ~/Code/dotfiles/fish_config/oh-my-posh.toml | source
 end
 
 function which-test
